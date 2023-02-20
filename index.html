@@ -152,6 +152,13 @@
             let dataObject = {};
             const data = new FormData(form);
             for (const [name, value] of data) {
+                // VERY dirty fix to get done with this
+                if (value == "on") {
+                    dataObject[name] = "true";
+
+                    continue
+                }
+
                 dataObject[name] = value;
             }
 
